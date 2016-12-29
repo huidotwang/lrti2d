@@ -1,0 +1,7 @@
+Import('env')
+
+lib_env = env.Clone()
+
+lib_common = lib_env.Library('common',['sinc.c', 'Grid.c'])
+
+Return('lib_common')

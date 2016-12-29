@@ -1,0 +1,22 @@
+Import('*')
+
+mpicc = compiler['mpicc']
+mpicxx = compiler['mpicxx']
+
+env_ti = env.Clone()
+
+# lowrank decomposition library
+env_ti.Append(CPPPATH=[eigen_inc])
+env_ti.Library('vecmatop',['vecmatop.cc'])
+
+env_ti.Library('sample',['sample.cc'])
+
+# Pseudo-spectral related library
+env_ti.Append(CPPPATH=[fftw_inc])
+env_ti.Library('ps',['ts_kernel.c', 'abcutil.c'])
+
+env_ti.Prepend(LIBPATH=[fftw_lib])
+env_ti.Append(LIBS=['sample', 'vecmatop', 'ps', 'fftw3f_omp', 'fftw3f', 'common', libs])
+bin_ti_op = env_ti.Program('lrtiop.x', ['Mlrtiop.cc'])
+
+Return('bin_ti_op')
