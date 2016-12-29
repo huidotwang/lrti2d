@@ -1,0 +1,58 @@
+# compiler generated files
+*.exe
+*.so
+*.o
+*.mod
+*.x
+*.pyc
+
+# OS generated files
+.DS_Store
+.Trashes
+.Spotlight_V100
+
+*.dbhash
+*.dblite
+*.sconsign
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+
+CMakeCache.txt
+CMakeFiles
+CMakeScripts
+Makefile
+cmake_install.cmake
+install_manifest.txt
+CTestTestfile.cmake
+
+# RSF files
+*.rsf
+*.vpl
